@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Frameset Page</title>
+</head>
+<frameset rows="100,*" border="1">
+    <!-- Top banner frame -->
+    <frame src="banner.html" name="banner" scrolling="no" noresize>
+
+    <!-- Divide the bottom into left (TOC) and right (content) -->
+    <frameset cols="200,*" border="1">
+        <frame src="toc.html" name="toc">
+        <frame src="home.html" name="content">
+    </frameset>
+</frameset>
+</html>
