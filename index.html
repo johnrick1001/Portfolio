@@ -4,55 +4,103 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
+  <!-- Icons (still using CDN for convenience; can also be downloaded if needed) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f9;
+      background: #f9fafc;
       color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
     header {
       background: #2d3e50;
       color: white;
-      padding: 1rem 2rem;
+      padding: 1.5rem;
       text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.2rem;
+      font-weight: 700;
     }
     nav {
       margin-top: 0.5rem;
     }
     nav a {
-      color: #ffcc00;
+      color: #f1c40f;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffffff;
     }
     main {
       max-width: 900px;
       margin: 2rem auto;
       padding: 1rem;
     }
+    section {
+      margin-bottom: 3rem;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
     h2 {
       border-bottom: 2px solid #2d3e50;
-      padding-bottom: 5px;
+      padding-bottom: 8px;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
     }
+    p {
+      font-size: 1rem;
+      color: #555;
+    }
+    /* Project cards */
     .project-list {
       list-style: none;
       padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
     .project-list li {
       background: white;
-      margin: 0.5rem 0;
       padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project-list li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.15);
     }
     .project-list a {
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      color: #2d3e50;
+    }
+    /* Contact */
+    #contact a {
+      text-decoration: none;
+      color: #2d3e50;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+    #contact a:hover {
+      color: #f1c40f;
+    }
+    #contact i {
+      margin-right: 8px;
       color: #2d3e50;
     }
     footer {
@@ -61,6 +109,7 @@
       color: white;
       padding: 1rem;
       margin-top: 2rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -70,6 +119,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -83,27 +133,30 @@
     <section id="projects">
       <h2>Projects & Files</h2>
       <ul class="project-list">
-        <li><a href="first.html" target="_blank" aria-label="first"> first.html</a></li>
-        <li><a href="MaanoActivity1.2.html" target="_blank" aria-label="Beethoven"> MaanoActivity1.2.html</a></li>
-        <li><a href="resume.html" target="_blank" aria-label="resume"> resume.html</a></li>
-        <li><a href="MaanoActivity2.2.html" target="_blank" aria-label="TV Schedule"> MaanoActivity2.2.html</a></li>
-        <li><a href="Activity2.3/index.html" target="_blank" aria-label="Frame Page"> index.html</a></li>
-        <li><a href="Activity3.1/cssprac11.html" target="_blank" aria-label="Practice 1"> cssprac11.html</a></li>
-        <li><a href="Activity3.1/cssprac22.html" target="_blank" aria-label="Practice 2"> cssprac22.html</a></li>
-        <li><a href="Activity3.2/cssprac1_inline.html" target="_blank" aria-label="Practice 1 Inline"> cssprac1_inline.html</a></li>
-        <li><a href="Activity3.2/cssprac1_embedded.html" target="_blank" aria-label="Practice 1 Embedded"> cssprac1_embedded.html</a></li>
-        <li><a href="Activity3.2/cssprac2_inline.html" target="_blank" aria-label="Practice 2 Inline"> cssprac2_inline.html</a></li>
-        <li><a href="Activity3.2/cssprac2_embedded.html" target="_blank" aria-label="Practice 2 Embedded"> cssprac2_embedded.html</a></li>
-        <li><a href="triangle.html" target="_blank" aria-label="Triangle Checker"> triangle.html</a></li>
+        <li><a href="first.html" target="_blank">first.html</a></li>
+        <li><a href="MaanoActivity1.2.html" target="_blank">MaanoActivity1.2.html</a></li>
+        <li><a href="resume.html" target="_blank">resume.html</a></li>
+        <li><a href="MaanoActivity2.2.html" target="_blank">MaanoActivity2.2.html</a></li>
+        <li><a href="Activity2.3/index.html" target="_blank">index.html</a></li>
+        <li><a href="Activity3.1/cssprac11.html" target="_blank">cssprac11.html</a></li>
+        <li><a href="Activity3.1/cssprac22.html" target="_blank">cssprac22.html</a></li>
+        <li><a href="Activity3.2/cssprac1_inline.html" target="_blank">cssprac1_inline.html</a></li>
+        <li><a href="Activity3.2/cssprac1_embedded.html" target="_blank">cssprac1_embedded.html</a></li>
+        <li><a href="Activity3.2/cssprac2_inline.html" target="_blank">cssprac2_inline.html</a></li>
+        <li><a href="Activity3.2/cssprac2_embedded.html" target="_blank">cssprac2_embedded.html</a></li>
+        <li><a href="triangle.html" target="_blank">triangle.html</a></li>
       </ul>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:johnrick1910@gmail.com">johnrick1910@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/johnrick1001" target="_blank">@johnrick1001</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:johnrick1910@gmail.com">johnrick1910@gmail.com</a></p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/johnrick1001" target="_blank">@johnrick1001</a></p>
     </section>
   </main>
 
+  <footer>
+    &copy; 2025 John Rick Maano | All Rights Reserved
+  </footer>
 </body>
 </html>
